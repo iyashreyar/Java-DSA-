@@ -9,22 +9,20 @@ public class CircleFormulas {
   }
 
   static double perimeter() {
-    try (Scanner sc = new Scanner(System.in)) {
-      System.out.println("Enter radius for calculating Perimeter = ");
-      double r = sc.nextInt();
-      double pie = 3.14;
-      double peri = 2 * pie * r;
-      return peri;
-    }
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter radius for calculating Perimeter = ");
+    double r = sc.nextInt();
+    double pie = 3.14;
+    double peri = 2 * pie * r;
+    return peri;
   }
 
   static double Area() {
-    try (Scanner sc = new Scanner(System.in)) {
-      System.out.println("Enter radius for calculating Area = ");
-      double r = sc.nextInt();
-      double pie = 3.14;
-      double area = pie * (r * r);
-      return area;
-    }
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter radius for calculating Area = ");
+    double r = sc.nextInt();
+    double pie = 3.14;
+    double area = pie * (r * r);
+    return area;
   }
 }
