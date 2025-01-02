@@ -12,3 +12,7 @@ public class LeetCodeQ18 {
     return -1;
   }
 }
+
+/*
+ * return haystack.indexOf(needle);
+ */

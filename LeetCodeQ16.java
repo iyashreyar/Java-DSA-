@@ -1,3 +1,6 @@
+
+//ques - https://leetcode.com/problems/remove-element/description/?envType=study-plan-v2&envId=top-interview-150
+
 public class LeetCodeQ16 {
   public static void main(String[] args) {
     int[] arr = { 0, 1, 2, 2, 3, 0, 4, 2 };
