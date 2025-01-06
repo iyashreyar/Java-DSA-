@@ -1,5 +1,5 @@
 
-//print all the permutations of a given string
+//print all the permutations of a given string using recursion
 
 public class Permutations {
   public static void main(String[] args) {

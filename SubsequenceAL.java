@@ -1,4 +1,6 @@
 
+//print all subsets of the string by using array list using recursion
+
 import java.util.ArrayList;
 
 public class SubsequenceAL {

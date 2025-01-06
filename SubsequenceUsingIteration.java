@@ -1,4 +1,6 @@
 
+//print every subset of an array of integers using iteration
+
 import java.util.ArrayList;
 import java.util.List;
 

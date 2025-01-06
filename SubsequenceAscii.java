@@ -1,3 +1,6 @@
+
+//print all the subsets of a string along with thier ascii values using recursion
+
 public class SubsequenceAscii {
   public static void main(String[] args) {
     subseq("", "abc");

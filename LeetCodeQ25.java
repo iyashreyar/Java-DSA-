@@ -1,3 +1,6 @@
+
+//ques - https://leetcode.com/problems/merge-strings-alternately/description/?envType=study-plan-v2&envId=leetcode-75
+
 public class LeetCodeQ25 {
     public static void main(String[] args) {
         String a = "abc";

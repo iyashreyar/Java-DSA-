@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "LeetCodeQ24",
+      "request": "launch",
+      "mainClass": "LeetCodeQ24",
+      "projectName": "DSA_8ad54726"
+    },
+    {
+      "type": "java",
       "name": "SubsequenceStrings",
       "request": "launch",
       "mainClass": "SubsequenceStrings",

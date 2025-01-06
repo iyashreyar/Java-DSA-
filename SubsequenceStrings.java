@@ -1,3 +1,6 @@
+
+//print all the subsets of string using recursion
+
 public class SubsequenceStrings {
   public static void main(String[] args) {
     subseq("", "abc");

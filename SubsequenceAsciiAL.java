@@ -1,3 +1,7 @@
+
+//print all the subsets of a string along with thier ascii values using recursion
+
+
 import java.util.ArrayList;
 
 public class SubsequenceAsciiAL {
