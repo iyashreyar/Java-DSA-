@@ -12,7 +12,6 @@ public class nQueens{
         }
 
         int count = 0;
-
         //placing the queen and checking for every row and col
         for (int c = 0; c < board.length; c++){
             //place the queen if it is safe

@@ -1,4 +1,6 @@
 
+//fint the path from a point to another point in 2d array using an arraylist if we can only go in either right or down direction
+
 import java.util.ArrayList;
 
 public class MazePathAL {

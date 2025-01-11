@@ -4,52 +4,52 @@ public class nKnights {
         boolean[][] board = new boolean[n][n];
         knight(board, 0, 0, 4);
     }
-    static void knight(boolean[][] board, int row, int col, int knights) {
+    static void knight(boolean[][] board, int r, int c, int knights) {
         if (knights == 0) {
             display(board);
             System.out.println();
             return;
         }
 
-        if (row == board.length - 1 && col == board.length) {
+        if (r == board.length - 1 && c == board.length) {
             return;
         }
 
-        if (col == board.length) {
-            knight(board, row + 1, 0, knights);
+        if (c == board.length) {
+            knight(board, r + 1, 0, knights);
             return;
         }
 
-        if (isSafe(board, row, col)) {
-            board[row][col] = true;
-            knight(board, row, col + 1, knights - 1);
-            board[row][col] = false;
+        if (isSafe(board, r, c)) {
+            board[r][c] = true;
+            knight(board, r, c + 1, knights - 1);
+            board[r][c] = false;
         }
 
-        knight(board, row, col + 1, knights);
+        knight(board, r, c + 1, knights);
     }
 
-    private static boolean isSafe(boolean[][] board, int row, int col) {
-        if (isValid(board, row - 2, col - 1)) {
-            if (board[row - 2][col - 1]) {
+    private static boolean isSafe(boolean[][] board, int r, int c) {
+        if (isValid(board, r - 2, c - 1)) {
+            if (board[r - 2][c - 1]) {
                 return false;
             }
         }
 
-        if (isValid(board, row - 1, col - 2)) {
-            if (board[row - 1][col - 2]) {
+        if (isValid(board, r - 1, c - 2)) {
+            if (board[r - 1][c - 2]) {
                 return false;
             }
         }
 
-        if (isValid(board, row - 2, col + 1)) {
-            if (board[row - 2][col + 1]) {
+        if (isValid(board, r - 2, c + 1)) {
+            if (board[r - 2][c + 1]) {
                 return false;
             }
         }
 
-        if (isValid(board, row - 1, col + 2)) {
-            if (board[row - 1][col + 2]) {
+        if (isValid(board, r - 1, c + 2)) {
+            if (board[r - 1][c + 2]) {
                 return false;
             }
         }
@@ -58,16 +58,16 @@ public class nKnights {
     }
 
     // do not repeat yourself, hence created this function
-    static boolean isValid(boolean[][] board, int row, int col) {
-        if (row >= 0 && row < board.length && col >= 0 && col < board.length) {
+    static boolean isValid(boolean[][] board, int r, int c) {
+        if (r >= 0 && r < board.length && c >= 0 && c < board.length) {
             return true;
         }
         return false;
     }
 
     private static void display(boolean[][] board) {
-        for(boolean[] row : board) {
-            for(boolean element : row) {
+        for(boolean[] r : board) {
+            for(boolean element : r) {
                 if (element) {
                     System.out.print("K ");
                 } else {

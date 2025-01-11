@@ -1,4 +1,5 @@
 
+//ques - https://www.naukri.com/code360/problems/first-missing-positive_699946?utm_source=youtube&utm_medium=affiliate&utm_campaign=parikh_youtube 
 
 public class CodingNinjasQ5 {
     public static void main(String[] args) {
@@ -22,6 +23,7 @@ public class CodingNinjasQ5 {
                 return index + 1;
             }
         }
+        //case 2
         return arr.length+1;
 	}
     

@@ -1,3 +1,6 @@
+
+//ques - https://leetcode.com/problems/counting-words-with-a-given-prefix/description/?envType=daily-question&envId=2025-01-09
+
 public class LeetCodeQ28 {
     public static void main(String[] args) {
         String[] words = {"leetcode","win","loops","success"};
@@ -6,8 +9,8 @@ public class LeetCodeQ28 {
     }
     static int prefixCount(String[] words, String pref) {
         int count = 0;
-        for (int i = 0; i < words.length;i++){
-            if (words[i].startsWith(pref)){
+        for (String word : words) {
+            if (word.startsWith(pref)) {
                 count++;
             }
         }

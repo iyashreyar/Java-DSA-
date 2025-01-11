@@ -1,3 +1,6 @@
+
+//fint the path from a point to another point in 2d array if we can go right(H), down(V) or diagonal(D) direction
+
 public class MazePathDiagonal {
     public static void main(String[] args) {
         diagonal("", 3, 3);

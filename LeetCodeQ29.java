@@ -1,3 +1,6 @@
+
+//ques - https://leetcode.com/problems/maximum-score-after-splitting-a-string/description/?envType=daily-question&envId=2025-01-09git
+
 public class LeetCodeQ29 {
     public static void main(String[] args) {
         String s = "011101";

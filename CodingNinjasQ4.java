@@ -1,3 +1,6 @@
+
+//ques - https://www.naukri.com/code360/problems/equilibrium-index_893014?utm_source=youtube&utm_medium=affiliate&utm_campaign=parikh_youtube&leftPanelTabValue=PROBLEM
+
 public class CodingNinjasQ4 {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,6};

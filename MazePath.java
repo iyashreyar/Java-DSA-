@@ -1,3 +1,6 @@
+
+//fint the path from a point to another point in 2d array if we can only go in either right or down direction
+
 public class MazePath {
     public static void main(String[] args) {
         path("", 3, 3);
