@@ -1,3 +1,6 @@
+
+//ques - https://www.naukri.com/code360/problems/non-decreasing-array_699920?utm_source=youtube&utm_medium=affiliate&utm_campaign=parikh_youtube
+
 public class CodingNinjasQ3{
     public static void main(String[] args) {
         int[] arr = {8,4,2};
