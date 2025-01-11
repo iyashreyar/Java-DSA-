@@ -1,3 +1,6 @@
+
+//ques - https://www.naukri.com/code360/problems/second-largest-element-in-the-array_873375?utm_source=youtube&utm_medium=affiliate&utm_campaign=parikh_youtube
+
 public class CodingNinjasQ2 {
     public static void main(String[] args) {
         int[] arr = {7,3,4,6,7,2,8,9,3,2,7,8,8,1,2};

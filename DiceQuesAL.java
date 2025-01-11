@@ -2,7 +2,7 @@
 //return all the combinations whose sum is equals to the target in an arraylist
 
 import java.util.ArrayList;
-public class DuceQuesAL {
+public class DiceQuesAL {
     public static void main(String[] args) {
         System.out.println(dice("", 3));
     }

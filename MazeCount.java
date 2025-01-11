@@ -1,7 +1,7 @@
 
 //fint the number of steps to go from a point to another point in 2d array if we can only go in either eight or down direction
 
-public class MazeQues {
+public class MazePath {
     public static void main(String[] args) {
         System.out.println(count(3, 3));
     }

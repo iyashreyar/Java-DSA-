@@ -1,3 +1,6 @@
+
+//ques - https://www.naukri.com/code360/problems/reverse-string-word-wise_1262348?utm_source=youtube&utm_medium=affiliate&utm_campaign=parikh_youtube&leftPanelTabValue=PROBLEM
+
 import java.util.Scanner;
 
 public class CodingNinjasQ6 {

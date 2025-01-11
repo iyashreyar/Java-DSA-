@@ -1,6 +1,6 @@
 public class LeetCodeQ27 {
     public static void main(String[] args) {
-        int[] arr = {7,6,4,3,1};
+        int[] arr = {7,1,5,3,6,4};
         System.out.println(maxProfit(arr));
     }
     static int maxProfit(int[] prices) {
