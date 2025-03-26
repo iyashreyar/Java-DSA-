@@ -11,7 +11,7 @@ public class linearSearch1 {
 
   public static void main(String[] args) {
     int[] nums = { 2, 34, 5, 43, 67, 45 };
-    int target = 43;
+    int target = 22;
     int ans = linear(nums, target);
     if (ans != -1) {
       System.out.println("Element found at index:" + ans);

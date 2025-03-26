@@ -6,8 +6,8 @@ import java.util.Arrays;
 
 public class LeetCodeQ43 {
     public static void main(String[] args) {
-        int[] nums = {9,4,1,7,14,12};//1,4,7,10,12,14
-        int k = 3;
+        int[] nums = {9,4,1,7};
+        int k = 2;
         System.out.println(minimumDifference(nums, k));
     }
     static int minimumDifference(int[] nums, int k) {
@@ -23,7 +23,3 @@ public class LeetCodeQ43 {
         return min;
     }
 }
-//6
-//5
-//5
-//5

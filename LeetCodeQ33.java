@@ -1,3 +1,6 @@
+
+//ques - https://leetcode.com/problems/length-of-last-word/description/?envType=problem-list-v2&envId=string
+
 public class LeetCodeQ33 {
     public static void main(String[] args) {
         String s = "luffy is still joyboy";

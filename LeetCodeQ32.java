@@ -1,4 +1,6 @@
 
+//ques - https://leetcode.com/problems/longest-common-prefix/description/
+
 import java.util.Arrays;
 
 public class LeetCodeQ32 {

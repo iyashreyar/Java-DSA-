@@ -6,6 +6,48 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Practice1",
+      "request": "launch",
+      "mainClass": "Practice1",
+      "projectName": "DSA_8ad54726"
+    },
+    {
+      "type": "java",
+      "name": "LeetCodeQ44",
+      "request": "launch",
+      "mainClass": "LeetCodeQ44",
+      "projectName": "DSA_8ad54726"
+    },
+    {
+      "type": "java",
+      "name": "LeetCodeQ42",
+      "request": "launch",
+      "mainClass": "LeetCodeQ42",
+      "projectName": "DSA_8ad54726"
+    },
+    {
+      "type": "java",
+      "name": "LeetCodeQ39",
+      "request": "launch",
+      "mainClass": "LeetCodeQ39",
+      "projectName": "DSA_8ad54726"
+    },
+    {
+      "type": "java",
+      "name": "LeetCodeQ38",
+      "request": "launch",
+      "mainClass": "LeetCodeQ38",
+      "projectName": "DSA_8ad54726"
+    },
+    {
+      "type": "java",
+      "name": "LeetCodeQ30",
+      "request": "launch",
+      "mainClass": "LeetCodeQ30",
+      "projectName": "DSA_8ad54726"
+    },
+    {
+      "type": "java",
       "name": "CodingNinjasQ7",
       "request": "launch",
       "mainClass": "CodingNinjasQ7",

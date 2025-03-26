@@ -24,3 +24,21 @@ public class PalindromeOrNoT {
     return n == reverse(n);
   }
 }
+
+//simpler method without recursion
+
+/*
+  static boolean isPalindrome(int x) {
+        
+        int num = x;
+        int reverse = 0;
+
+        while(num > 0)
+        {
+            reverse = (reverse * 10) + num%10;
+            num = num/10;
+        }
+
+        return reverse == x;
+    }
+ */

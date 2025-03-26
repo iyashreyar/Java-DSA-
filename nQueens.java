@@ -1,3 +1,6 @@
+
+//display the board after the queen placement and number of ways to place queens on the board
+
 public class nQueens{
     public static void main(String[] args) {
         int n = 5;
