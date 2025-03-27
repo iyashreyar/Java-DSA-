@@ -8,6 +8,13 @@ public class LinkedListt {
         ls.insertLast(98);
         ls.insert(10, 3);
         ls.display();
+        System.out.println(ls.deleteFirst());
+        ls.display();
+        System.out.println(ls.deleteLast());
+        ls.display();
+        System.out.println(ls.delete(3));
+        ls.display();
+        System.out.println(ls.find(87));
     }
 
     private Node head;
@@ -71,6 +78,61 @@ public class LinkedListt {
         tail.next = node;
         tail = node;
         size += 1;
+    }
+
+    public int deleteFirst(){
+        if (head == null){                      //it means there are no elements in LL, so making the tail null as well
+            tail = head;
+        }
+        int val = head.value;
+        head = head.next;
+        size--;
+        return val;
+    }
+
+    public Node get(int index){                     // Method to find a node at particular index
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    public int deleteLast(){
+        if (size <= 1){
+            return deleteFirst();
+        }
+        Node secondLast = get(size-2);
+        int val = tail.value;
+        tail = secondLast;
+        tail.next = null;
+        size--;
+        return val;
+    }
+
+    public int delete(int index){
+        if (index == 0){
+            return deleteFirst();
+        }
+        if (index == size-1){
+            return deleteLast();
+        }
+        Node prev = get(index-1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+        size--;
+        return val;
+    }
+
+    public Node find(int value){                // Method to find node of required value
+        Node node = head;
+        while (node != null){
+            if (node.value == value){
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
     }
 
     public void display(){
