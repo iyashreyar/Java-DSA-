@@ -1,3 +1,6 @@
+
+// Singly LL
+
 public class LinkedListt {
     public static void main(String[] args) {
         LinkedListt ls = new LinkedListt();
@@ -6,7 +9,7 @@ public class LinkedListt {
         ls.insertFirst(87);
         ls.insertFirst(43);
         ls.insertLast(98);
-        ls.insert(10, 3);
+        ls.insert(10, 5);
         ls.display();
         System.out.println(ls.deleteFirst());
         ls.display();
@@ -17,7 +20,7 @@ public class LinkedListt {
         System.out.println(ls.find(87));
     }
 
-    private Node head;
+        private Node head;
         private Node tail;
         private int size;
         public LinkedListt() {
