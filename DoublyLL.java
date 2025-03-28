@@ -8,6 +8,9 @@ public class DoublyLL {
         ls.display();
         System.out.println(ls.deleteFirst());
         ls.display();
+        ls.insertAfter(86, 99);
+        ls.display();
+
         //ls.displayRev();
     }
 
@@ -104,6 +107,25 @@ public class DoublyLL {
     //     size++;
     // }
 
+    public void insertAfter(int after, int val){
+        Node p = find(after);
+
+        if (p == null){
+            System.out.println("Does not exist");
+            return;
+        }
+
+        size++;
+
+        Node node = new Node(val);
+        node.next = p.next;
+        p.next = node;
+        node.prev = p;
+        if (node.next != null){
+            node.next.prev = node;
+        }
+    }
+
     public int deleteFirst(){
         int val = head.val;
         if (head != null){
@@ -112,6 +134,17 @@ public class DoublyLL {
             size--;
         }
         return val;
+    }
+
+    public Node find(int val){
+        Node temp = head;
+        while (temp != null){
+            if (temp.val == val){
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
     }
 
     public void display() {

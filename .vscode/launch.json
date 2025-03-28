@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "DoublyLL",
+      "request": "launch",
+      "mainClass": "DoublyLL",
+      "projectName": "DSA_8ad54726"
+    },
+    {
+      "type": "java",
       "name": "Practice1",
       "request": "launch",
       "mainClass": "Practice1",
