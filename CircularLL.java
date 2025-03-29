@@ -5,6 +5,7 @@ public class CircularLL {
         ls.insert(5);
         ls.insert(6);
         ls.insert(7);
+        
         ls.display();
     }
 
@@ -39,6 +40,25 @@ public class CircularLL {
         size++;
     }
 
+    public void delete(int value){
+        Node node = head;
+        if (node == null){
+            return;
+        }
+        if (node.val == value){
+            head = head.next;
+            tail.next = head;
+            return;
+        }
+        do { 
+            Node n = node.next;
+            if(n.val == value){
+                node.next = n.next;
+                break;
+            }
+        } while (node != head);
+    }
+
     public void display(){
         if (head == null){
             System.out.println("No elements exists");
@@ -49,6 +69,7 @@ public class CircularLL {
                 System.out.print(node.val + " -> ");
                 node = node.next;
             } while (node!=head);
+            System.out.println("HEAD");
         }
     }
 }
