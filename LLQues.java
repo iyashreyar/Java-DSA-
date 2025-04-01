@@ -25,10 +25,7 @@ public class LLQues {
         // LLQues ans = LLQues.Merge(first, second);
         // ans.display();
 
-        // Answer 3
-        LLQues ls = new LLQues();
-        System.out.println(ls.hasCycle());
-
+        
     }
 
     private Node head;
@@ -118,6 +115,7 @@ public class LLQues {
     }
 
     // Q3 - Link list cycle / Cycle detection
+    // https://leetcode.com/problems/linked-list-cycle/description/
     public boolean hasCycle() {
 
         if(head == null){           // Edge case: empty list
@@ -135,6 +133,30 @@ public class LLQues {
         }
 
         return false;
+    }
+
+    // Q4 - Find the length of cycle
+    public int cycleLength() {
+
+        int count = 0;
+
+        if (head == null){
+            return count;
+        }
+
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow){
+                while(slow != fast){
+                    count++;
+                }
+            }
+        }
+
+        return count;
     }
 
     public void display(){
