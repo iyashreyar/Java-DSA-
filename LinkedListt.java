@@ -3,23 +3,20 @@
 
 public class LinkedListt {
     public static void main(String[] args) {
-        LinkedListt ls = new LinkedListt();
-        ls.insertFirst(32);
-        ls.insertFirst(23);
-        ls.insertFirst(87);
-        ls.insertFirst(43);
-        ls.insertLast(98);
-        ls.insert(10, 5);
-        ls.display();
-        System.out.println(ls.deleteFirst());
-        ls.display();
-        System.out.println(ls.deleteLast());
-        ls.display();
-        System.out.println(ls.delete(3));
-        ls.display();
-        System.out.println(ls.find(87));
-        ls.insertRec(33, 1);
-        ls.display();
+        LinkedListt first = new LinkedListt();
+        LinkedListt second = new LinkedListt();
+
+        first.insertLast(1);
+        first.insertLast(3);
+        first.insertLast(5);
+
+        second.insertLast(1);
+        second.insertLast(2);
+        second.insertLast(9);
+        second.insertLast(14);
+
+        LinkedListt ans = LinkedListt.Merge(first, second);
+        ans.display();
     }
 
         private Node head;
@@ -153,6 +150,49 @@ public class LinkedListt {
             node = node.next;
         }
         return null;
+    }
+
+    // Questions
+
+    // Q1 - Remove duplicates values from a LL
+    public void removeDuplicates(){
+        Node temp = head;
+        while (temp.next != null){
+            if (temp.value == temp.next.value){
+                temp.next = temp.next.next;
+                size--;
+            } else {
+                temp = temp.next;
+            }
+        }
+        tail = temp;
+        temp.next = null;
+    }
+
+    // Q2 - Merge two sorted lists
+    public static LinkedListt Merge(LinkedListt first, LinkedListt second){
+        Node f = first.head;
+        Node s = second.head;
+
+        LinkedListt ans = new LinkedListt();
+        while (f != null && s != null){
+            if (f.value < s.value){
+                ans.insertLast(f.value);
+                f = f.next;
+            } else {
+                ans.insertLast(s.value);
+                s = s.next;
+        }
+        }
+        while (s != null){
+            ans.insertLast(s.value);
+            s = s.next;
+        }
+        while (f != null){
+            ans.insertLast(f.value);
+            f = f.next;
+        }
+        return ans;
     }
 
     public void display(){
