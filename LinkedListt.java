@@ -1,22 +1,16 @@
 
-// Singly LL
 
 public class LinkedListt {
     public static void main(String[] args) {
-        LinkedListt first = new LinkedListt();
-        LinkedListt second = new LinkedListt();
+        LinkedListt ls = new LinkedListt();
+        ls.insertFirst(23);
+        ls.insertLast(34);
+        ls.insertLast(13);
+        ls.insert(99, 1);
 
-        first.insertLast(1);
-        first.insertLast(3);
-        first.insertLast(5);
-
-        second.insertLast(1);
-        second.insertLast(2);
-        second.insertLast(9);
-        second.insertLast(14);
-
-        LinkedListt ans = LinkedListt.Merge(first, second);
-        ans.display();
+        ls.display();
+        ls.delete(1);
+        ls.display();
     }
 
         private Node head;
@@ -150,49 +144,6 @@ public class LinkedListt {
             node = node.next;
         }
         return null;
-    }
-
-    // Questions
-
-    // Q1 - Remove duplicates values from a LL
-    public void removeDuplicates(){
-        Node temp = head;
-        while (temp.next != null){
-            if (temp.value == temp.next.value){
-                temp.next = temp.next.next;
-                size--;
-            } else {
-                temp = temp.next;
-            }
-        }
-        tail = temp;
-        temp.next = null;
-    }
-
-    // Q2 - Merge two sorted lists
-    public static LinkedListt Merge(LinkedListt first, LinkedListt second){
-        Node f = first.head;
-        Node s = second.head;
-
-        LinkedListt ans = new LinkedListt();
-        while (f != null && s != null){
-            if (f.value < s.value){
-                ans.insertLast(f.value);
-                f = f.next;
-            } else {
-                ans.insertLast(s.value);
-                s = s.next;
-        }
-        }
-        while (s != null){
-            ans.insertLast(s.value);
-            s = s.next;
-        }
-        while (f != null){
-            ans.insertLast(f.value);
-            f = f.next;
-        }
-        return ans;
     }
 
     public void display(){
