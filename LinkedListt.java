@@ -11,9 +11,12 @@ public class LinkedListt {
         ls.display();
         ls.delete(1);
         ls.display();
+
+        ls.reverse(head);
+        ls.display();
     }
 
-        private Node head;
+        private static Node head;
         private Node tail;
         private int size;
         public LinkedListt() {
@@ -144,6 +147,20 @@ public class LinkedListt {
             node = node.next;
         }
         return null;
+    }
+
+    //Reverse a LL using recursion
+    public void reverse(Node node){
+        if (node == tail){
+            head = tail;
+            return;
+        }
+
+        reverse(node.next);
+
+        tail.next = node;
+        tail = node;
+        node.next = null;
     }
 
     public void display(){
