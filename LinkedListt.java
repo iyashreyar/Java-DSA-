@@ -244,7 +244,6 @@ public class LinkedListt {
     }
 
     public Node reverseList(Node head) {
-
         if (head == null){
             return head;
         }
@@ -274,6 +273,29 @@ public class LinkedListt {
         return slow; 
     }
 
+    // Reorder list
+    // Ques - https://leetcode.com/problems/reorder-list/description/
+    public void reorderList(Node head){
+        Node mid = middleNode(head);
+        Node hs = reverseList(mid);
+        Node hf = head;
+
+        //rearrange 
+        while (hf != null && hs != null){
+            Node temp = hf.next;
+            hf.next = hs;
+            hf = temp;
+
+            temp = hs.next;
+            hs.next = hf;
+            hs = temp;
+        }
+
+        //point next of tail to null
+        if (hf != null){
+            hf.next = null;
+        }
+    }
 
     public void display(){
         Node temp = head;
