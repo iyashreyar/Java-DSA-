@@ -11,12 +11,9 @@ public class LinkedListt {
         ls.display();
         ls.delete(1);
         ls.display();
-
-        ls.reverse(head);
-        ls.display();
     }
 
-        private static Node head;
+        private Node head;
         private Node tail;
         private int size;
         public LinkedListt() {
@@ -150,7 +147,7 @@ public class LinkedListt {
     }
 
     //Reverse a LL using recursion
-    public void reverse(Node node){
+    private void reverse(Node node){
         if (node == tail){
             head = tail;
             return;
@@ -161,6 +158,28 @@ public class LinkedListt {
         tail.next = node;
         tail = node;
         node.next = null;
+    }
+
+    //In place reversal of a LL
+    //google, microsoft, amazon, apple 
+    //ques - https://leetcode.com/problems/reverse-linked-list/description/
+    public void inPlaceReversal(){
+        if (size < 2){
+            return;
+        }
+        Node prev = null;
+        Node present = head;
+        Node next = present.next;
+        
+        while(present != null){
+            present.next = prev;
+            prev = present;
+            present = next;
+            if (next != null){
+                next = next.next;
+            }
+        }
+        head = prev;
     }
 
     public void display(){
