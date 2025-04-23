@@ -22,7 +22,7 @@ public class LLQues {
         second.insertLast(2);
         second.insertLast(9);
         second.insertLast(14);
-        LLQues ans = LLQues.MergeSort(first, second);
+        LLQues ans = LLQues.Merge(first, second);
         ans.display();
 
     }
@@ -243,30 +243,6 @@ public class LLQues {
     // Q8 - Sort LL
     // https://leetcode.com/problems/sort-list/description/
     
-
-    public static LLQues MergeSort(LLQues first, LLQues second){
-        LLQues ans = new LLQues();
-        Node f = first.head;
-        Node s = second.head;
-        while (f != null && s != null){
-            if (f.value < s.value){
-                ans.insertLast(f.value);
-                f = f.next;
-            } else {
-                ans.insertLast(s.value);
-                s = s.next;
-            }
-        }
-        while (f != null){
-            ans.insertLast(f.value);
-            f = f.next;
-        }
-        while (s != null){
-            ans.insertLast(s.value);
-            s = s.next;
-        }
-        return ans;
-    }
 
     public void display(){
         Node temp = head;

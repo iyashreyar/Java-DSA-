@@ -182,6 +182,99 @@ public class LinkedListt {
         head = prev;
     }
 
+    //Reverse LL in between of two nodes 
+    //Reverse LL - II 
+    // Ques - https://leetcode.com/problems/reverse-linked-list-ii/description/
+
+    public Node reverseBetween(Node head, int left, int right){
+        if (left == right){
+            return head;
+        }
+
+        //skip the first left-1 nodes
+        Node prev = null;
+        Node current = head;
+        for (int i = 0; current != null && i < left-1; i++) {
+            prev = current;
+            current= current.next;
+        }
+        Node last = prev;
+        Node newEnd = current;
+
+        //reverse bw left and right
+        Node next = current.next;
+        for (int i = 0; current != null && i < right-left+1; i++) {
+            current.next = prev;
+            prev = current;
+            current = next;
+            if (next != null){
+                next = next.next;
+            }
+        }
+        if (last != null){
+            last.next = prev;
+        } else {
+            head = prev;
+        }
+
+        newEnd.next = current;
+        return head;
+    }
+
+    // LL is palindrome or not 
+    // Ques - https://leetcode.com/problems/palindrome-linked-list/description/
+    public boolean isPalindrome(Node head){
+        Node mid = middleNode(head);
+        Node headSecond = reverseList(mid);
+        Node rereverseHead = headSecond;
+
+        //compare both the halves
+        while (head != null && headSecond != null){
+            if (head.value != headSecond.value){
+                break;
+            }
+            head = head.next;
+            headSecond = headSecond.next;
+        }
+        reverseList(rereverseHead);
+        if (head == null || headSecond == null){
+            return true;
+        } 
+        return false;   
+    }
+
+    public Node reverseList(Node head) {
+
+        if (head == null){
+            return head;
+        }
+
+        Node prev = null;
+        Node present = head;
+        Node next = present.next;
+        
+        while(present != null){
+            present.next = prev;
+            prev = present;
+            present = next;
+            if (next != null){
+                next = next.next;
+            }
+        }
+        return prev;
+    }
+    public Node middleNode(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next !=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow; 
+    }
+
+
     public void display(){
         Node temp = head;
         while(temp != null){
