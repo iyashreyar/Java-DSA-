@@ -35,8 +35,10 @@ public class LinkedListt {
         }
     }
 
-    public void insert(int val, int index){
 
+
+    
+    public void insert(int val, int index){
         if (index == 0){
             insertFirst(val);
             return;
@@ -55,6 +57,9 @@ public class LinkedListt {
         size++;
     }
 
+
+
+
     //insert using recursion
     public void insertRec(int val, int index){
         head = insertRec(val, index, head);
@@ -70,6 +75,9 @@ public class LinkedListt {
         return node;
     }
 
+
+
+
     public void insertFirst(int val){
         Node node = new Node(val);
         node.next = head;
@@ -79,6 +87,9 @@ public class LinkedListt {
         }
         size += 1;
     }
+
+
+
 
     public void insertLast(int val){
         if (tail == null){                      //no elements in linked list / empty linked list
@@ -91,6 +102,9 @@ public class LinkedListt {
         size += 1;
     }
 
+
+
+
     public int deleteFirst(){
         if (head == null){                      //it means there are no elements in LL, so making the tail null as well
             tail = head;
@@ -101,6 +115,9 @@ public class LinkedListt {
         return val;
     }
 
+
+
+
     public Node get(int index){                     // Method to find a node at particular index
         Node temp = head;
         for (int i = 0; i < index; i++) {
@@ -108,6 +125,10 @@ public class LinkedListt {
         }
         return temp;
     }
+
+
+
+
 
     public int deleteLast(){
         if (size <= 1){
@@ -120,6 +141,9 @@ public class LinkedListt {
         size--;
         return val;
     }
+
+
+
 
     public int delete(int index){
         if (index == 0){
@@ -135,6 +159,9 @@ public class LinkedListt {
         return val;
     }
 
+
+
+
     public Node find(int value){                // Method to find node of required value
         Node node = head;
         while (node != null){
@@ -145,6 +172,9 @@ public class LinkedListt {
         }
         return null;
     }
+
+
+
 
     //Reverse a LL using recursion
     private void reverse(Node node){
@@ -159,6 +189,9 @@ public class LinkedListt {
         tail = node;
         node.next = null;
     }
+
+
+
 
     //In place reversal of a LL
     //google, microsoft, amazon, apple 
@@ -181,6 +214,10 @@ public class LinkedListt {
         }
         head = prev;
     }
+
+
+
+
 
     //Reverse LL in between of two nodes 
     //Reverse LL - II 
@@ -220,6 +257,10 @@ public class LinkedListt {
         newEnd.next = current;
         return head;
     }
+
+
+
+
 
     // LL is palindrome or not 
     // Ques - https://leetcode.com/problems/palindrome-linked-list/description/
@@ -273,6 +314,9 @@ public class LinkedListt {
         return slow; 
     }
 
+
+
+
     // Reorder list
     // Ques - https://leetcode.com/problems/reorder-list/description/
     public void reorderList(Node head){
@@ -296,6 +340,69 @@ public class LinkedListt {
             hf.next = null;
         }
     }
+
+
+
+
+    // Ques - https://leetcode.com/problems/reverse-nodes-in-k-group/
+    // Google, Amazon, Apple, Microsoft
+    public Node reverseKGroup(Node head, int k) {
+
+        if(k == 1 || head == null){
+            return head;
+        }
+
+        Node prev = null;
+        Node current = head;
+
+        int remaininglength = listLength(head);
+
+        while(remaininglength >= k){
+
+            Node last = prev;
+            Node newEnd = current;
+
+            Node next = current.next;
+
+            for(int i = 0; (current!= null) && i < k; i++){
+                current.next = prev;
+                prev = current;
+                current = next;
+                next = (next != null) ? next.next : next;
+            }
+
+            if(last == null){
+                head = prev;   
+            } else{
+                last.next = prev;
+            }
+
+            newEnd.next = current;
+            prev = newEnd;
+
+            remaininglength = remaininglength - k;
+        }
+        return head;
+    }
+
+    //finding the length of the List
+    public int listLength(Node head){
+        if(head == null){
+            return 0;
+        }
+
+        Node temp = head;
+        int length = 0;
+
+        while(temp != null){
+            length += 1;
+            temp = temp.next; 
+        }
+        return length;
+    }
+
+
+
 
     public void display(){
         Node temp = head;
