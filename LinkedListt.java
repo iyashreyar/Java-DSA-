@@ -37,7 +37,7 @@ public class LinkedListt {
 
 
 
-    
+
     public void insert(int val, int index){
         if (index == 0){
             insertFirst(val);
@@ -343,7 +343,7 @@ public class LinkedListt {
 
 
 
-
+    // Reverse nodes in a k group
     // Ques - https://leetcode.com/problems/reverse-nodes-in-k-group/
     // Google, Amazon, Apple, Microsoft
     public Node reverseKGroup(Node head, int k) {
@@ -368,7 +368,9 @@ public class LinkedListt {
                 current.next = prev;
                 prev = current;
                 current = next;
-                next = (next != null) ? next.next : next;
+                if (next != null){
+                    next = next.next;
+                }
             }
 
             if(last == null){
@@ -399,6 +401,142 @@ public class LinkedListt {
             temp = temp.next; 
         }
         return length;
+    }
+
+
+
+
+    // Reverse alternate k nodes in a group
+    // Ques - https://www.geeksforgeeks.org/reverse-alternate-k-nodes-in-a-singly-linked-list/
+    
+    public Node ReversekAlternatively(Node head, int k) {
+        if (k == 1 || head == null) {
+            return head;
+        }
+    
+        Node prev = null;
+        Node current = head;
+    
+        boolean reverse = true;
+    
+        while (current != null) {
+            Node last = prev;
+            Node newEnd = current;
+            Node next = null;
+    
+            int count = 0;
+    
+            if (reverse) {
+                // Reverse k nodes
+                while (current != null && count < k) {
+                    next = current.next;
+                    current.next = prev;
+                    prev = current;
+                    current = next;
+                    count++;
+                }
+    
+                if (last != null) {
+                    last.next = prev;
+                } else {
+                    head = prev;
+                }
+    
+                newEnd.next = current;
+                prev = newEnd;
+            } else {
+                // Skip k nodes
+                while (current != null && count < k) {
+                    prev = current;
+                    current = current.next;
+                    count++;
+                }
+            }
+            reverse = !reverse; // Toggle
+        }
+    
+        return head;
+    }
+    
+    
+    //                            OR
+
+
+    // public Node ReversekAlternatively(Node head, int k){
+    //     if(k == 1 || head == null){
+    //         return head;
+    //     }
+
+    //     Node prev = null;
+    //     Node current = head;
+
+    //     int remaininglength = listLength(head);
+
+    //     while(remaininglength >= k){
+
+    //         Node last = prev;
+    //         Node newEnd = current;
+
+    //         Node next = current.next;
+
+    //         for(int i = 0; (current!= null) && i < k; i++){
+    //             current.next = prev;
+    //             prev = current;
+    //             current = next;
+    //             if (next != null){
+    //                 next = next.next;
+    //             }
+    //         }
+
+    //         if(last == null){
+    //             head = prev;   
+    //         } else{
+    //             last.next = prev;
+    //         }
+
+    //         newEnd.next = current;
+    //         remaininglength = remaininglength - k;
+
+    //         //skip the k nodes 
+    //         if (remaininglength >= k){
+    //             for (int i = 0; i < k; i++) {
+    //                 prev = current;
+    //                 current = current.next;
+    //             }
+    //         }
+
+    //         remaininglength = remaininglength - k;
+
+    //     }
+    //     return head;
+    // }
+    
+
+
+
+    // Rotate list 
+    // Ques - https://leetcode.com/problems/rotate-list/description/
+    public Node rotateRight(Node head, int k){
+        if (k <= 0 || head == null || head.next == null){
+            return head;
+        }
+        Node last = head;
+        int length = 1;
+        while (last.next != null){
+            last = last.next;
+            length++;
+        }
+        last.next = head;
+        int rotations = k % length;
+        int skip = length - rotations;
+        Node newLast = head;
+        for (int i = 0; i < skip-1; i++) {
+            newLast = newLast.next;
+        }
+        head = newLast.next;
+        newLast.next = null;
+
+        return head;
     }
 
 
